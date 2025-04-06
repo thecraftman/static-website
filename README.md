@@ -4,7 +4,6 @@ A Kubernetes-based static website deployment system with Traefik server, Nginx, 
 
 ## Overview
 
-This project provides:
 
 - Static website hosting on Kubernetes with environment variable injection
 - Self-signed HTTPS and secret management

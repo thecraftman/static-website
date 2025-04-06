@@ -1,0 +1,27 @@
+deployment:
+  enabled: true
+
+ingressRoute:
+  dashboard:
+    enabled: true
+
+ports:
+  web:
+    port: 8000
+    exposedPort: 80
+    protocol: TCP
+  websecure:
+    port: 8443
+    exposedPort: 443
+    protocol: TCP
+    tls:
+      enabled: true
+
+dashboard:
+  enabled: true
+
+tls:
+  options:
+    default:
+      minVersion: VersionTLS12
+      sniStrict: true

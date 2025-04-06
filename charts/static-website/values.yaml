@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: xayn/static-website
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  hosts:
+    - host: static-website.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+environment: dev
+
+secretName: website-secret
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi

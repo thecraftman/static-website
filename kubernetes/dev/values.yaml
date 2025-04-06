@@ -1,0 +1,15 @@
+environment: dev
+replicaCount: 1
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  hosts:
+    - host: dev.static-website.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+secretName: website-secret

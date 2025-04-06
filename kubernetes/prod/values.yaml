@@ -1,0 +1,30 @@
+environment: prod
+replicaCount: 2
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.tls: "true"
+  hosts:
+    - host: static-website.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+# ingress: using let's encrypt and domain
+#   enabled: true
+#   annotations:
+#     kubernetes.io/ingress.class: traefik
+#     cert-manager.io/cluster-issuer: letsencrypt-prod
+#   hosts:
+#     - host: your-domain.com
+#       paths:
+#         - path: /
+#           pathType: Prefix
+#   tls:
+#     - secretName: your-domain-tls
+#       hosts:
+#         - your-domain.com
+
+secretName: website-secret

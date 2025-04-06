@@ -1,6 +1,6 @@
 # Static Website Deployment
 
-A Kubernetes-based static website deployment system with both local and cloud options.
+A Kubernetes-based static website deployment system with Traefik server, Nginx, and Terraform
 
 ## Overview
 
